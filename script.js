@@ -8,9 +8,9 @@ function checkPalindrome(text){
     alert("Please input a value");
     return;
   }
-  cleanText = text.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  const cleanText = text.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
   const cleanReversedText = cleanText.split("").reverse().join("");
-  resultP.textContent = text + ' is ' + (cleanText === cleanReversedText ? '' : ' not ') + 'a palindrome';
+  resultP.textContent = `${text} is ${(cleanText === cleanReversedText ? '' : ' not ')} a palindrome`;
 }
 
 checkBtn.addEventListener('click', () => {
