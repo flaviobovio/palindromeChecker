@@ -8,11 +8,12 @@ function checkPalindrome(text){
     alert("Please input a value");
     return;
   }
-  text = text.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-  const reversedText = text.split("").reverse().join("");
-  resultP.textContent = (text === reversedText) ? 'Is a palindrome' : 'Is not a palindrome';
+  cleanText = text.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  const cleanReversedText = cleanText.split("").reverse().join("");
+  resultP.textContent = text + ' is ' + (cleanText === cleanReversedText ? '' : ' not ') + 'a palindrome';
 }
 
 checkBtn.addEventListener('click', () => {
   checkPalindrome(textInput.value);
+  textInput.value = '';
 });
